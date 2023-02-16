@@ -1,9 +1,16 @@
 version: 2.1
 workflows:
   version: 2
-  just_push:
-      jobs:
-      - pantheon/push
-        branch: master
+  deploy: 
+    jobs: 
+    - pantheon/push
+      filters:
+        branches:
+          only:
+          - master
+  # just_push:
+  #     jobs:
+  #     - pantheon/push
+  #       branch: master
 orbs:
   pantheon: pantheon-systems/pantheon@0.6.0
