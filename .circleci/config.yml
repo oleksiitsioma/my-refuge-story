@@ -4,8 +4,6 @@ workflows:
   just_push:
       jobs:
       - pantheon/push
-          filters:
-              branches:
-              - master
+        branch: master
 orbs:
   pantheon: pantheon-systems/pantheon@0.6.0
